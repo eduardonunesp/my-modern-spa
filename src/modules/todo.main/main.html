@@ -1,0 +1,6 @@
+<todo-header name="Foo Bar"></todo-header>
+<form name="titleForm" ng-submit="vm.addNewTodo(todo)">
+  <input type="text" placeholder="New todo" ng-model="todo.title" ng-required="true" />
+  <button ng-disabled="titleForm.$invalid">Add New Todo</button>
+</form>
+<todo-list list="vm.TodosService.todos"></todo-list>

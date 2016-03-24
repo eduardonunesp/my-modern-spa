@@ -1,0 +1,9 @@
+<h4>List</h4>
+<table>
+  <tr ng-repeat="item in list | filter: {done: false}">
+    <td>{{item.title}}</td>
+    <td>
+      <input type="checkbox" ng-click="TodosService.markDone(item)" />
+    </td>
+  </tr>
+</table>
