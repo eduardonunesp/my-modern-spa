@@ -22,19 +22,14 @@ function makeWebpackConfig () {
   };
 
   config.module = {
-    preLoaders: [],
-
-    loaders: [{
-      test: /\.js$/,
-      loader: 'babel-loader',
-      exclude: /node_modules/,
-      query: {
-        presets: ['es2015']
-      }
-    }, {
-      test: /\.html$/,
-      loader: 'raw'
-    }]
+    loaders: [
+      {test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/, query: {presets: ['es2015'] }},
+      {test: /\.html$/, loader: 'raw-loader'},
+      {test: /\.css$/, loader: 'css-loader'},
+      {test: /\.scss$/, loader: 'style!css!sass'},
+      {test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,loader: "url-loader?limit=10000&mimetype=application/font-woff"},
+      {test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,loader: "file-loader"}
+    ]
   };
 
   config.plugins = [
@@ -46,6 +41,14 @@ function makeWebpackConfig () {
     new webpack.optimize.DedupePlugin(),
     new ngAnnotatePlugin({
       add: true,
+    }),
+    new webpack.ProvidePlugin({
+      "$" : "jquery",
+      $ : "jquery",
+      jQuery : "jquery",
+      "window.jQuery" : "jquery",
+      "root.jQuery" : "jquery",
+      "hammerjs": "hammerjs"
     })
   ];
 

@@ -2,8 +2,9 @@
 
 class TodoHeader {
   constructor() {
-    this.template = '<div>Welcome to my todo {{name}}</div>';
+    this.template = require('./todo.header.html');
     this.restrict = 'E';
+    this.replace = true;
     this.scope = {
       name: '@',
     };

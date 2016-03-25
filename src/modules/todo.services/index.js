@@ -1,15 +1,20 @@
 'use strict';
 
 class TodosService {
-  constructor() {
+  constructor($timeout) {
+    this.$timeout = $timeout;
     this.todos = [];
   }
 
   markDone(todo) {
-    todo.done = true;
+    this.$timeout(function() {
+      todo.done = true
+    }, 500);
   }
 }
 
+TodosService.$inject = ['$timeout'];
+
 export default angular.module('todo.services', [])
-  .service('TodosService', () => new TodosService)
+  .service('TodosService', TodosService)
   .name;

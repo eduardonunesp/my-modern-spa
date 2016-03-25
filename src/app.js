@@ -1,7 +1,11 @@
 'use strict';
 
-import 'angular/angular.min';
-import 'angular-ui-router/release/angular-ui-router.min';
+import './index.scss';
+import 'materialize-css/dist/js/materialize.js';
+
+import 'angular/angular';
+import 'angular-ui-router/release/angular-ui-router';
+
 import TodoMain from './modules/todo.main';
 
 const app = angular.module('todoApp', [

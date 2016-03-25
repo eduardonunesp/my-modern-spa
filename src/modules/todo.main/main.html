@@ -1,6 +1,21 @@
 <todo-header name="Foo Bar"></todo-header>
-<form name="titleForm" ng-submit="vm.addNewTodo(todo)">
-  <input type="text" placeholder="New todo" ng-model="todo.title" ng-required="true" />
-  <button ng-disabled="titleForm.$invalid">Add New Todo</button>
-</form>
-<todo-list list="vm.TodosService.todos"></todo-list>
+
+<div class="row" style="margin-top: 30px;">
+  <form class="col s12" name="titleForm" ng-submit="vm.addNewTodo(todo)">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="New todo" ng-model="todo.title" id="title" type="text" class="validate" ng-required="true" >
+        <label for="title">Title</label>
+      </div>
+      <button class="waves-effect waves-light btn" ng-disabled="titleForm.$invalid">Add New Todo</button>
+    </div>
+  </form>
+</div>
+
+<div class="row" style="margin-top: 30px;">
+  <div class="col s12">
+    <todo-list list="vm.TodosService.todos"></todo-list>
+  </div>
+</div>
+
+
