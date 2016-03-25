@@ -43,11 +43,8 @@ function makeWebpackConfig () {
       add: true,
     }),
     new webpack.ProvidePlugin({
-      "$" : "jquery",
-      $ : "jquery",
-      jQuery : "jquery",
-      "window.jQuery" : "jquery",
-      "root.jQuery" : "jquery",
+      $: "jquery",
+      jQuery: "jquery",
       "hammerjs": "hammerjs"
     })
   ];

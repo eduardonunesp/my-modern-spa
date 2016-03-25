@@ -1,0 +1,10 @@
+$roboto-font-path: "~materialize-sass/font/roboto/";
+$icons-font-path: "~materialize-sass/font/material-design-icons/";
+@import "~materialize-sass/sass/materialize.scss";
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+    font-size: inherit;
+}
