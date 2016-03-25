@@ -1,7 +1,7 @@
 # my-modern-spa
 Example of todo app using modern approach
 
-## Bootstraping
+## Bootstrapping
 * `npm install`
 * `npm run dev`
 
